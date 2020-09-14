@@ -1,5 +1,6 @@
 package com.wolfgangzhu.mock.example;
 
+import com.wolfgangzhu.mock.example.choice.TestServiceV2;
 import com.wolfgangzhu.mock.example.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -20,11 +21,13 @@ public class MockApplication implements ApplicationRunner {
     }
 
     @Autowired
-    TestService testService;
+    TestService   testService;
+    @Autowired
+    TestServiceV2 testServiceV2;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
         testService.test();
-
+        testServiceV2.exec();
     }
 }
